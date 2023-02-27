@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="style.css" /> 
+  </head>
+  <body>
+    <div class="content">
+      <img src="https://picsum.photos/300/300/?random" />
+    </div>
+
+    <div class="loader-wrapper">
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+
+    <script>
+        // Show Loader when a link is clicked
+          $(document).on('click', 'a', function(){
+             $(".loader-wrapper").show();
+        }); 
+
+          // show loader when a form is submitted
+         $(document).on('submit', 'form', function(){
+             $(".loader-wrapper").show();
+        })
+
+         // Hide loader when page is fully loaded
+        $(window).on("load",function(){
+          $(".loader-wrapper").fadeOut("slow");
+        });
+    </script>
+  </body>
+</html>
